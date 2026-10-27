@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">B&amp;B struktūra - ģeodēzija, topogrāfija un kadastrālā uzmērīšana, Rēzekne</title>
+<meta name="description" content="SIA B&amp;B struktūra kopš 1994. gada veic topogrāfiskos, inženierģeodēziskos, aerofotogrammetriskos un kadastrālās uzmērīšanas darbus. Rēzekne, visa Latvija.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff'/%3E%3Cg transform='translate%284 4%29 scale%28.875%29'%3E%3Cpath d='M32 10 A22 22 0 0 1 54 32 L32 32 Z M32 54 A22 22 0 0 1 10 32 L32 32 Z' fill='%23D0312D'/%3E%3Cpath d='M54 32 A22 22 0 0 1 32 54 L32 32 Z M10 32 A22 22 0 0 1 32 10 L32 32 Z' fill='%237C838C' fill-opacity='.35'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23D0312D' stroke-width='3.5'/%3E%3Cpath d='M32 2 V7 M32 57 V62 M2 32 H7 M57 32 H62' stroke='%23D0312D' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='3.4' fill='%23fff' stroke='%23D0312D' stroke-width='2.2'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD4klEQVR4nMxXa2hTSRT+Js3LTcWt3TZpok3b7XZh2boLu+6WXfCHIL4VtKgIvi2iSKVVtCpWfCE+UFGrVQPWFyj6Q3/4KPjf549an1XRPtQmrdaifSRp0vHMjbaR3nuTe9XiB4eZZM7M+e6Zc87MGBEFzvmP1BSR5JH8SZKKr4MmkiqS6yS7GWOtnwZYlPGx1HhInPi2eEWykEhc7iFAxkdTcwUa8XLbVlqBwbWyBDowTpAwkvEk+nEUOtD56CG+AB6ynWukzhySNPQ/xFbPNiAScJrAAwF0VN+B2eGAOc1J/Wpwvx86kMfIDbXUccej3XLhPJpPnYD/6RPZcUtmJuzzC5A0fgLiRJ0gwGNpdfs78WLzRry9dBEwkNPSM4BfcoCsbKB8H6RYZr36gydOxpDVa8Gs1lhLIyaBQH0dnhculVoMzwObNQ9ISuoZ57Om9SpLS0XIWNxuZO0tg3loOnQT4MEgaqbnI/DuHVCwBCx3WF+daALRIE9Z093IOX0WzGyGEgxQQeP+vQjU1QJLi2SNqyIchv/5M3gPlqmqKRJov1OF5pPHwcZPAsv5FZrBIlvRdOwoOu7fg2YCzccrwFwuIH86dIM2l5lMRKICmgl0PLgPjBgJGE3QDfIC7+pC57270EQg1NKCLp8PSElRnMha3iChtATGQYNUg0xkRtDbiO6297LDxk8db/kBtN2+JfUt6R9TJ1n5NDbs3o6hRcXgoTAaNpQiTBkjax+REvFq10746+ul/wYO/wf2RYs/J9BnlmhKV0WCSU4lMVEyLoSlpIKVeWT1WM1D8M3roZTtsnWgq8mHB2NG9dJXQILNRseYE92Fy6k4DZZXqrwEfrICv1VehSmlr0dlPWBKtSPhBxvCHW2qDMLt7WDrt0AVVEcM5C054wKKWTDg91zygDAe86hQRutb8JvXYRv2h6KKIoHU2XMiH/8F9oXrEfDDPm8BNBMY+N//SM6fFglCroNFNd1Bb1zDTzNmwvbX39BMQMBVvAIW1xAwQwK0uII/rgH3HJTuB85lRaq6qgTEeZ65/wCs2dmQ9kN4QsUbPBQCP3MK2LQOA+wOZO3ZB2axQNVGPBcS0MLeI4fg8xyOxEW4uydDWWExIKpmI922nzwGb/LCUbAI9gUFlGPGmEsLAl5q7YgD4lSrW1OCYEO97LjFnYGMbTtgjf/09AkC4j0wOt4ZUm2nrw02NOD1Obps0MUjecpUqXybHGmKlVMBlSIGqrTMEAbMThcS/81D6HWzVDVF30QVUaNxgSpBoJykFf0PYbPcQM+jWurMhw5Yf87+mCG6MFfY/j4ep1Ek+v15/gEAAP//bOVBpQAAAAZJREFUAwB3eGM8e9eOQAAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<script>
+  (function(){
+    var d = document.documentElement;
+    d.classList.add('js');
+    var t = 'light';
+    try{ if(localStorage.getItem('bb-theme') === 'dark') t = 'dark'; }catch(e){}
+    d.setAttribute('data-theme', t);
+  })();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F6F7;
+    --panel:#ECEEF0;
+    --card:#FFFFFF;
+    --ink:#15181C;
+    --ink-soft:#5B636D;
+    --line:rgba(21,24,28,.12);
+    --red:#D0312D;
+    --red-hover:#B3241F;
+    --on-red:#FFFFFF;
+    --deep:#15181C;
+    --contour:rgba(21,24,28,.06);
+    --shadow:0 26px 50px -32px rgba(21,24,28,.45);
+    --font-head:'Barlow Semi Condensed','Arial Narrow',system-ui,sans-serif;
+    --font-body:'Inter','Segoe UI',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+    --maxw:1180px;
+    --fade:.25s;
+    --fade-theme:.45s;
+    color-scheme: light;
+  }
+  :root[data-theme="dark"]{
+    --bg:#101215;
+    --panel:#15181C;
+    --card:#1B1F24;
+    --ink:#ECEFF2;
+    --ink-soft:#A3ABB5;
+    --line:rgba(236,239,242,.12);
+    --red:#E5483F;
+    --red-hover:#F2645B;
+    --on-red:#FFFFFF;
+    --deep:#0B0D10;
+    --contour:rgba(236,239,242,.05);
+    --shadow:0 26px 50px -32px rgba(0,0,0,.9);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;transition-delay:0s !important;}
+  }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color var(--fade-theme) ease,color var(--fade-theme) ease;}
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;transition:color var(--fade) ease,background-color var(--fade) ease,border-color var(--fade) ease,opacity var(--fade) ease;}
+  h1,h2,h3,h4{font-family:var(--font-head);font-weight:700;margin:0;color:var(--ink);letter-spacing:.005em;line-height:1.05;transition:color var(--fade-theme) ease;}
+  h1 em,h2 em{font-style:normal;color:var(--red);transition:color var(--fade-theme) ease;}
+  p{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+  button{font-family:inherit;cursor:pointer;transition:color var(--fade) ease,background-color var(--fade) ease,border-color var(--fade) ease,opacity var(--fade) ease;}
+  :focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+  section[id]{scroll-margin-top:72px;}
+
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--red);color:var(--on-red);padding:.75rem 1.25rem;z-index:300;border-radius:0 0 8px 0;font-weight:600;}
+  .skip-link:focus{left:0;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+
+  .kicker{font-family:var(--font-mono);font-size:.74rem;font-weight:500;color:var(--red);letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.65rem;transition:color var(--fade-theme) ease;}
+  .kicker::before{content:"";width:12px;height:12px;border:2px solid currentColor;border-radius:50%;background:radial-gradient(circle,currentColor 0 2px,transparent 2.5px);display:inline-block;flex:none;}
+
+  /* header */
+  header{position:sticky;top:0;z-index:200;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:background-color var(--fade-theme) ease,border-color var(--fade-theme) ease;}
+  .nav-row{display:flex;align-items:center;gap:1.5rem;padding-top:.7rem;padding-bottom:.7rem;}
+  .brand{display:flex;align-items:center;flex:none;}
+  .brand-logo{height:44px;width:auto;display:block;}
+  nav.primary{display:flex;align-items:center;justify-content:center;gap:2rem;flex:1;}
+  nav.primary a{font-family:var(--font-head);font-size:1.02rem;font-weight:600;letter-spacing:.03em;color:var(--ink-soft);position:relative;padding:.2rem 0;}
+  nav.primary a:hover{color:var(--ink);}
+  nav.primary a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--red);opacity:0;transition:opacity var(--fade) ease;}
+  nav.primary a:hover::after{opacity:1;}
+  .header-actions{display:flex;align-items:center;gap:.75rem;margin-left:auto;}
+
+  .lang-switch{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:border-color var(--fade-theme) ease;}
+  .lang-switch button{background:none;border:none;padding:.4rem .62rem;font-family:var(--font-mono);font-size:.7rem;font-weight:500;letter-spacing:.06em;color:var(--ink-soft);transition:background-color var(--fade) ease,color var(--fade) ease;}
+  .lang-switch button:hover{color:var(--ink);background:color-mix(in srgb, var(--ink) 7%, transparent);}
+  .lang-switch button[aria-pressed="true"]{background:var(--ink);color:var(--bg);}
+
+  .icon-btn{width:2.3rem;height:2.3rem;border-radius:8px;border:1px solid var(--line);background:none;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);flex:none;transition:border-color var(--fade) ease,color var(--fade) ease,background-color var(--fade) ease;}
+  .icon-btn:hover{border-color:var(--red);color:var(--red);}
+  .icon-btn svg{width:1.05rem;height:1.05rem;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.82rem 1.5rem;border-radius:8px;font-family:var(--font-head);font-weight:600;font-size:1.02rem;letter-spacing:.04em;border:1px solid transparent;transition:background-color var(--fade) ease,color var(--fade) ease,border-color var(--fade) ease,box-shadow var(--fade) ease;white-space:nowrap;cursor:pointer;}
+  .btn svg{width:1.05rem;height:1.05rem;flex:none;}
+  .btn-solid{background:var(--red);color:var(--on-red);box-shadow:0 14px 26px -16px rgba(208,49,45,.85);}
+  .btn-solid:hover{background:var(--red-hover);box-shadow:0 18px 30px -16px rgba(208,49,45,.95);}
+  .btn-line{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-line:hover{background:var(--panel);border-color:var(--ink);}
+  .btn-sm{padding:.58rem 1.1rem;font-size:.95rem;}
+  .hero .btn-line,.dark-band .btn-line{color:#fff;border-color:rgba(255,255,255,.4);}
+  .hero .btn-line:hover,.dark-band .btn-line:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+
+  .menu-toggle{display:none;width:2.6rem;height:2.6rem;border-radius:8px;border:1px solid var(--line);background:none;position:relative;flex:none;transition:border-color var(--fade) ease,background-color var(--fade) ease;}
+  .menu-toggle:hover{border-color:var(--red);}
+  .menu-toggle i{position:absolute;left:50%;top:50%;width:18px;height:2px;margin-left:-9px;background:var(--ink);border-radius:2px;transition:transform .35s ease,opacity .25s ease,background-color var(--fade) ease;}
+  .menu-toggle i:nth-child(1){transform:translateY(-6px);}
+  .menu-toggle i:nth-child(3){transform:translateY(6px);}
+  .menu-toggle:hover i{background:var(--red);}
+  .menu-toggle[aria-expanded="true"] i:nth-child(1){transform:rotate(45deg);}
+  .menu-toggle[aria-expanded="true"] i:nth-child(2){opacity:0;}
+  .menu-toggle[aria-expanded="true"] i:nth-child(3){transform:rotate(-45deg);}
+
+  /* mobile + tablet menu */
+  .mobile-nav{position:fixed;inset:0;z-index:190;background:var(--bg);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.35rem;padding:5.5rem clamp(1.5rem,6vw,4rem) 2.5rem;overflow-y:auto;
+    visibility:hidden;pointer-events:none;clip-path:circle(0px at calc(100% - 2.6rem) 2.2rem);
+    transition:clip-path .75s cubic-bezier(.7,0,.2,1),visibility 0s linear .75s,background-color var(--fade-theme) ease;}
+  .mobile-nav.open{visibility:visible;pointer-events:auto;clip-path:circle(160% at calc(100% - 2.6rem) 2.2rem);
+    transition:clip-path .75s cubic-bezier(.7,0,.2,1),visibility 0s linear 0s,background-color var(--fade-theme) ease;}
+  .m-link{font-family:var(--font-head);font-weight:700;font-size:clamp(2.1rem,7vw,3rem);line-height:1.15;color:var(--ink);padding:.15rem 0;display:flex;align-items:baseline;gap:.9rem;opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease,color var(--fade) ease;}
+  .m-link small{font-family:var(--font-mono);font-size:.78rem;font-weight:500;color:var(--red);}
+  .m-link:hover{color:var(--red);}
+  .mobile-nav.open .m-link,.mobile-nav.open .m-extra{opacity:1;transform:none;transition-delay:calc(.3s + var(--i,0) * .07s);}
+  .mobile-nav.open .m-link:hover{transition-delay:0s;}
+  .m-extra{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease;}
+  .m-contact{margin-top:1.6rem;color:var(--ink-soft);font-size:.92rem;opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease;}
+  .mobile-nav.open .m-contact{opacity:1;transform:none;transition-delay:.85s;}
+  .m-contact a{color:var(--ink);font-weight:600;}
+  .m-contact a:hover{color:var(--red);}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;min-height:clamp(620px,94vh,880px);display:flex;align-items:center;padding:clamp(5rem,10vw,7rem) 0;background:#0F1215;}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:linear-gradient(160deg,#0F1215,#2B3138);}
+  .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,14,17,.5) 0%,rgba(12,14,17,.55) 50%,rgba(12,14,17,.88) 100%),linear-gradient(90deg,rgba(12,14,17,.7),rgba(12,14,17,.05) 75%);}
+  .hero-grid-lines{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);background-size:120px 120px;mask-image:linear-gradient(90deg,transparent,#000 40%,#000 80%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%,#000 80%,transparent);}
+  .hero .wrap{position:relative;z-index:2;width:100%;}
+  .hero-copy{max-width:44rem;}
+  .hero-copy .kicker{color:#FF8A84;}
+  .hero-copy h1{color:#fff;font-size:clamp(2.8rem,6.8vw,5.6rem);line-height:.98;margin:1.1rem 0 1.3rem;text-transform:uppercase;letter-spacing:.01em;}
+  .hero-copy h1 em{color:#FF6A62;}
+  .hero-copy p.lede{font-size:clamp(1rem,1.5vw,1.15rem);color:rgba(255,255,255,.86);max-width:50ch;margin-bottom:2rem;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;}
+  .hud{position:absolute;right:clamp(1.25rem,4vw,3rem);bottom:clamp(4.5rem,9vh,6rem);z-index:2;color:#fff;font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-align:right;display:flex;align-items:center;gap:1rem;}
+  .hud svg{width:64px;height:64px;color:#FF6A62;animation:spin 18s linear infinite;}
+  .hud b{display:block;font-weight:500;font-size:.95rem;}
+  .hud span{opacity:.7;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .hero-pause{position:absolute;right:clamp(1.25rem,4vw,3rem);top:1.6rem;z-index:3;width:2.6rem;height:2.6rem;border-radius:8px;border:1px solid rgba(255,255,255,.4);background:rgba(12,14,17,.45);color:#fff;display:flex;align-items:center;justify-content:center;transition:border-color var(--fade) ease,background-color var(--fade) ease;}
+  .hero-pause:hover{border-color:#fff;background:rgba(12,14,17,.8);}
+  .hero-pause svg{width:1rem;height:1rem;}
+
+  /* stats */
+  .stats{background:var(--card);border-bottom:1px solid var(--line);transition:background-color var(--fade-theme) ease,border-color var(--fade-theme) ease;}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .stat{padding:1.5rem 1.2rem;border-left:1px solid var(--line);transition:border-color var(--fade-theme) ease;}
+  .stat:first-child{border-left:none;padding-left:0;}
+  .stat b{display:block;font-family:var(--font-head);font-size:clamp(2rem,3.4vw,2.7rem);line-height:1;color:var(--ink);}
+  .stat b em{font-style:normal;color:var(--red);}
+  .stat span{font-size:.86rem;color:var(--ink-soft);}
+
+  section{padding:clamp(3.8rem,8.5vw,7rem) 0;position:relative;transition:background-color var(--fade-theme) ease;}
+  .section-head{max-width:62ch;margin-bottom:clamp(2.2rem,4vw,3rem);}
+  .section-head h2,.big-title{font-size:clamp(2.3rem,4.4vw,3.6rem);margin:.8rem 0 1rem;text-transform:uppercase;}
+  .section-head p{color:var(--ink-soft);font-size:1.04rem;}
+  .panel{background:var(--panel);}
+  .contours{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+  .contours svg{position:absolute;right:-8%;top:-10%;width:70%;height:120%;color:var(--contour);transition:color var(--fade-theme) ease;}
+  section > .wrap{position:relative;z-index:1;}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:center;}
+  .about-text{color:var(--ink-soft);font-size:1.05rem;max-width:56ch;margin-bottom:1.1rem;}
+  .about-quote{margin-top:1.6rem;padding-left:1.1rem;border-left:3px solid var(--red);font-family:var(--font-head);font-size:1.5rem;font-weight:600;line-height:1.25;max-width:30ch;transition:border-color var(--fade-theme) ease;}
+  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.3rem;transition:border-color var(--fade) ease,box-shadow var(--fade) ease,background-color var(--fade-theme) ease;}
+  .feat:hover{border-color:color-mix(in srgb, var(--red) 55%, transparent);box-shadow:var(--shadow);}
+  .feat-ic{width:2.8rem;height:2.8rem;border-radius:8px;background:color-mix(in srgb, var(--red) 12%, transparent);color:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;transition:background-color var(--fade) ease,color var(--fade) ease;}
+  .feat:hover .feat-ic{background:var(--red);color:var(--on-red);}
+  .feat-ic svg{width:1.4rem;height:1.4rem;}
+  .feat h3{font-size:1.25rem;margin-bottom:.3rem;}
+  .feat p{font-size:.9rem;color:var(--ink-soft);}
+
+  /* services explorer */
+  .svc{display:grid;grid-template-columns:minmax(260px,.85fr) 1.6fr;gap:clamp(1.2rem,3vw,2rem);align-items:start;}
+  .svc-list{display:flex;flex-direction:column;border-top:1px solid var(--line);transition:border-color var(--fade-theme) ease;}
+  .svc-tab{display:grid;grid-template-columns:2.4rem 1fr auto;align-items:center;gap:.6rem;text-align:left;background:none;border:none;border-bottom:1px solid var(--line);padding:.95rem .6rem;color:var(--ink-soft);font-family:var(--font-head);font-size:1.15rem;font-weight:600;letter-spacing:.01em;position:relative;transition:color var(--fade) ease,background-color var(--fade) ease,border-color var(--fade-theme) ease;}
+  .svc-tab .n{font-family:var(--font-mono);font-size:.72rem;font-weight:500;color:var(--red);}
+  .svc-tab .ar{opacity:0;color:var(--red);transition:opacity var(--fade) ease;}
+  .svc-tab .ar svg{width:1rem;height:1rem;}
+  .svc-tab:hover{color:var(--ink);background:color-mix(in srgb, var(--ink) 4%, transparent);}
+  .svc-tab[aria-selected="true"]{color:var(--ink);background:var(--card);}
+  .svc-tab[aria-selected="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);}
+  .svc-tab[aria-selected="true"] .ar,.svc-tab:hover .ar{opacity:1;}
+  .svc-panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(1.6rem,3.5vw,2.6rem);box-shadow:var(--shadow);min-height:100%;position:relative;overflow:hidden;transition:background-color var(--fade-theme) ease,border-color var(--fade-theme) ease;}
+  .svc-inner{transition:opacity .28s ease;}
+  .svc-inner.fading{opacity:0;}
+  .svc-top{display:flex;align-items:center;gap:1rem;margin-bottom:1.1rem;}
+  .svc-ic{width:3.4rem;height:3.4rem;border-radius:10px;background:var(--red);color:var(--on-red);display:flex;align-items:center;justify-content:center;flex:none;}
+  .svc-ic svg{width:1.8rem;height:1.8rem;}
+  .svc-top small{display:block;font-family:var(--font-mono);font-size:.72rem;color:var(--ink-soft);letter-spacing:.1em;}
+  .svc-top h3{font-size:clamp(1.6rem,2.6vw,2.1rem);text-transform:uppercase;}
+  .svc-desc{color:var(--ink-soft);font-size:1rem;margin-bottom:1.3rem;max-width:62ch;}
+  .svc-items{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.4rem;}
+  .svc-items li{display:flex;gap:.6rem;align-items:flex-start;font-size:.95rem;line-height:1.5;}
+  .svc-items li::before{content:"";flex:none;width:8px;height:8px;margin-top:.45rem;border:2px solid var(--red);transform:rotate(45deg);}
+  .svc-panel .wm{position:absolute;right:-.15em;bottom:-.35em;font-family:var(--font-head);font-weight:700;font-size:9rem;line-height:1;color:color-mix(in srgb, var(--ink) 5%, transparent);pointer-events:none;}
+
+  /* process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:s;}
+  .step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.5rem 1.3rem;transition:border-color var(--fade) ease,box-shadow var(--fade) ease,background-color var(--fade-theme) ease;}
+  .step:hover{border-color:color-mix(in srgb, var(--red) 55%, transparent);box-shadow:var(--shadow);}
+  .step .n{font-family:var(--font-mono);font-size:.78rem;color:var(--red);display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem;}
+  .step .n::after{content:"";flex:1;height:1px;background:var(--line);}
+  .step h3{font-size:1.35rem;text-transform:uppercase;margin-bottom:.35rem;}
+  .step p{font-size:.92rem;color:var(--ink-soft);}
+
+  /* dark careers band */
+  .dark-band{background:var(--deep);color:#fff;padding:clamp(3rem,6vw,4.5rem) 0;position:relative;overflow:hidden;transition:background-color var(--fade-theme) ease;}
+  .dark-band .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:2rem;align-items:center;position:relative;z-index:1;}
+  .dark-band .kicker{color:#FF8A84;}
+  .dark-band h2{color:#fff;font-size:clamp(2.1rem,4.2vw,3.3rem);text-transform:uppercase;margin:.7rem 0 .8rem;}
+  .dark-band h2 em{color:#FF6A62;}
+  .dark-band p{color:rgba(255,255,255,.75);max-width:52ch;}
+  .dark-band .btns{display:flex;flex-direction:column;gap:.8rem;align-items:flex-start;justify-self:end;}
+  .dark-band .mail{font-family:var(--font-mono);font-size:1rem;color:#fff;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:.2rem;transition:color var(--fade) ease,border-color var(--fade) ease;}
+  .dark-band .mail:hover{color:#FF8A84;border-color:#FF8A84;}
+  .dark-band svg.deco{position:absolute;left:-60px;top:-80px;width:340px;height:340px;color:rgba(255,255,255,.05);}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:start;}
+  .info-list{border-top:1px solid var(--line);margin-bottom:1.6rem;transition:border-color var(--fade-theme) ease;}
+  .info-item{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);transition:border-color var(--fade-theme) ease;}
+  .info-item .label{font-family:var(--font-mono);font-size:.7rem;font-weight:500;color:var(--ink-soft);letter-spacing:.12em;text-transform:uppercase;padding-top:.3rem;}
+  .info-item .value a{font-weight:600;}
+  .info-item .value a:hover{color:var(--red);}
+  .btn-row{display:flex;flex-wrap:wrap;gap:.8rem;}
+  .req{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(1.5rem,3vw,2.2rem);box-shadow:var(--shadow);transition:background-color var(--fade-theme) ease,border-color var(--fade-theme) ease;}
+  .req h3{font-size:1.5rem;text-transform:uppercase;margin-bottom:1rem;}
+  .req dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.55rem 1rem;font-size:.92rem;}
+  .req dt{color:var(--ink-soft);}
+  .req dd{margin:0;font-family:var(--font-mono);font-size:.85rem;font-weight:500;overflow-wrap:anywhere;}
+  .call{margin-top:1.2rem;background:var(--deep);color:#fff;border-radius:14px;padding:1.5rem 1.6rem;display:flex;flex-direction:column;gap:.35rem;transition:background-color var(--fade-theme) ease;}
+  .call small{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#FF8A84;}
+  .call a{font-family:var(--font-head);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;line-height:1.1;color:#fff;transition:color var(--fade) ease;}
+  .call a:hover{color:#FF8A84;}
+
+  /* footer */
+  footer{background:var(--panel);color:var(--ink);border-top:1px solid var(--line);transition:background-color var(--fade-theme) ease,color var(--fade-theme) ease,border-color var(--fade-theme) ease;}
+  .footer-main{padding-top:3rem;padding-bottom:2rem;}
+  .footer-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid var(--line);transition:border-color var(--fade-theme) ease;}
+  .footer-brand .brand-logo{height:56px;}
+  .footer-brand p{max-width:34ch;font-size:.9rem;color:var(--ink-soft);margin-top:1rem;}
+  .footer-links{display:flex;gap:3rem;flex-wrap:wrap;}
+  .footer-links h4{font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.9rem;}
+  .footer-links a,.footer-links span{display:block;color:var(--ink-soft);font-size:.92rem;margin-bottom:.5rem;}
+  .footer-links a:hover{color:var(--red);}
+  .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;font-size:.82rem;color:var(--ink-soft);align-items:center;}
+  .footer-lang{display:flex;gap:.5rem;}
+  .footer-lang button{background:none;border:1px solid var(--line);color:var(--ink);padding:.3rem .6rem;border-radius:6px;font-family:var(--font-mono);font-size:.7rem;font-weight:500;transition:background-color var(--fade) ease,border-color var(--fade) ease,color var(--fade) ease;}
+  .footer-lang button:hover{border-color:var(--red);}
+  .footer-lang button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg);}
+
+  /* reveal */
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease,background-color var(--fade-theme) ease,border-color var(--fade-theme) ease,color var(--fade-theme) ease;}
+  .js .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){ .js .reveal{opacity:1;transform:none;} .hud svg{animation:none;} }
+
+  /* tablet */
+  @media (max-width:1023px){
+    nav.primary{display:none;}
+    .menu-toggle{display:block;}
+    .header-actions .btn{display:none;}
+    .about,.contact-grid{grid-template-columns:1fr;}
+    .svc{grid-template-columns:1fr;}
+    .svc-list{display:grid;grid-template-columns:1fr 1fr;border-top:none;gap:.5rem;}
+    .svc-tab{border:1px solid var(--line);border-radius:10px;padding:.75rem .7rem;font-size:1.02rem;grid-template-columns:2rem 1fr;}
+    .svc-tab .ar{display:none;}
+    .svc-tab[aria-selected="true"]{border-color:var(--red);}
+    .svc-tab[aria-selected="true"]::before{display:none;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .dark-band .wrap{grid-template-columns:1fr;}
+    .dark-band .btns{justify-self:start;}
+    .hud{display:none;}
+  }
+  /* mobile */
+  @media (max-width:640px){
+    .lang-switch{display:none;}
+    .brand-logo{height:38px;}
+    .nav-row{gap:.75rem;}
+    .stats .wrap{grid-template-columns:1fr 1fr;}
+    .stat{padding:1.1rem 0;border-left:none;border-top:1px solid var(--line);}
+    .stat:nth-child(-n+2){border-top:none;}
+    .stat:nth-child(even){padding-left:1rem;border-left:1px solid var(--line);}
+    .feat-grid{grid-template-columns:1fr;}
+    .svc-list{grid-template-columns:1fr;}
+    .svc-items{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .info-item{grid-template-columns:1fr;gap:.2rem;}
+    .footer-grid{flex-direction:column;}
+    .hero-ctas .btn{width:100%;}
+    .req dl{grid-template-columns:1fr;gap:.1rem;}
+    .req dd{margin-bottom:.6rem;}
+    .hero-copy h1{font-size:clamp(2rem,10vw,2.8rem);}
+    .svc-top h3{font-size:1.3rem;}
+    .svc-top > div,.dark-band .wrap > *{min-width:0;}
+    .dark-band h2{font-size:clamp(1.6rem,7.6vw,2.1rem);}
+    h1,h2,h3{overflow-wrap:break-word;hyphens:auto;}
+  }
+  @media (max-width:360px){ .brand-logo{height:34px;} }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Pāriet uz saturu</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="ic-target"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 1.5v5M12 17.5v5M1.5 12h5M17.5 12h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></g>
+    <g id="ic-topo"><path d="M3 17c3-1 4-4 8-4s5 3 10 2M3 12c3-1 4-5 8-5s5 2 10 1M3 7c3-1 5-3 9-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16.5" cy="10.5" r="1.4" fill="currentColor"/></g>
+    <g id="ic-tripod"><rect x="8" y="3" width="8" height="6" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="6" r="1.4" fill="currentColor"/><path d="M12 9v3M12 12 6 21M12 12l6 9M12 12v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></g>
+    <g id="ic-drone"><rect x="9" y="10" width="6" height="4" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 11 5.5 7.5M15 11l3.5-3.5M9 13l-3.5 3.5M15 13l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.5 7.5h6M15.5 7.5h6M2.5 16.5h6M15.5 16.5h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></g>
+    <g id="ic-ortho"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><path d="M5 18c3-4 5-6 8-5s3 4 6 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></g>
+    <g id="ic-cube"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3.5 7 12 11.5 20.5 7M12 11.5v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></g>
+    <g id="ic-volume"><path d="M2.5 19.5 9 8l4 6 2.5-3.5 6 9Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M2.5 19.5h19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 3.5v2M7.5 4.5h3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></g>
+    <g id="ic-plot"><path d="M4 6.5 10 3.5l10 3.5-2 13-12-1.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="4" cy="6.5" r="1.6" fill="currentColor"/><circle cx="10" cy="3.5" r="1.6" fill="currentColor"/><circle cx="20" cy="7" r="1.6" fill="currentColor"/><circle cx="18" cy="20" r="1.6" fill="currentColor"/><circle cx="6" cy="18.5" r="1.6" fill="currentColor"/></g>
+    <g id="ic-split"><rect x="3" y="4" width="18" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 4v7l10 3M11 11 3 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.5 2" stroke-linecap="round"/></g>
+    <g id="ic-network"><circle cx="5" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="5" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 16.3 11 6.8M13 6.8l5 8.4M7 18h10" fill="none" stroke="currentColor" stroke-width="1.6"/></g>
+    <g id="ic-people"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 14.4c2.2.2 3.6 1.9 4 4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></g>
+    <g id="ic-cad"><rect x="3" y="4" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4M6.5 13.5l4-5 3 3 4-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g id="ic-phone"><path d="M7 3h3l1.5 4L9.5 8.5c.8 2.3 2.7 4.2 5 5l1.5-2L20 13v3a2 2 0 0 1-2.2 2C11.5 17.6 6.4 12.5 5.9 6.2A2 2 0 0 1 7 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></g>
+    <g id="ic-mail"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 7 8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></g>
+    <g id="ic-pin"><path d="M12 21s-7-7.2-7-12a7 7 0 1 1 14 0c0 4.8-7 12-7 12Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></g>
+    <g id="ic-arrow"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g id="ic-sun"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"/><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="5.1" y1="5.1" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="18.9" y2="18.9"/><line x1="5.1" y1="18.9" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="18.9" y2="5.1"/></g></g>
+    <g id="ic-moon"><path d="M20 14.2A8.2 8.2 0 1 1 9.8 4a6.6 6.6 0 0 0 10.2 10.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></g>
+    <g id="ic-pause"><rect x="6" y="4.5" width="4.5" height="15" rx="1" fill="currentColor"/><rect x="13.5" y="4.5" width="4.5" height="15" rx="1" fill="currentColor"/></g>
+    <g id="ic-play"><path d="M6 4.5v15l14-7.5z" fill="currentColor"/></g>
+    <g id="contours" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M40 300c40-120 160-180 260-160s160 120 120 210-170 120-260 80S10 380 40 300Z"/>
+      <path d="M90 300c30-80 120-120 200-105s120 85 90 150-125 85-195 55S68 355 90 300Z"/>
+      <path d="M140 300c20-45 75-70 135-60s85 55 65 95-80 55-130 35S125 335 140 300Z"/>
+      <path d="M190 300c12-22 40-35 75-30s48 30 38 50-45 28-75 18-45-20-38-38Z"/>
+      <path d="M-20 140c80-60 200-90 320-70s240 90 330 60"/>
+      <path d="M-20 80c90-50 220-75 340-55s250 70 340 40"/>
+      <path d="M-20 520c120-30 240 10 340 40s220 10 330-30"/>
+      <path d="M-20 580c130-25 250 15 350 40s230 5 330-35"/>
+    </g>
+  </defs>
+</svg>
+
+<a id="home"></a>
+<header>
+  <div class="wrap nav-row">
+    <a class="brand" href="#home" aria-label="B&amp;B struktūra">
+      <img src="logo.svg" alt="B&amp;B struktūra" class="brand-logo" width="128" height="44">
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <a href="#about" data-i18n="nav.about">Par mums</a>
+      <a href="#services" data-i18n="nav.services">Pakalpojumi</a>
+      <a href="#careers" data-i18n="nav.careers">Vakances</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakti</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="lv" aria-pressed="true">LV</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+        <button data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="Dark mode" aria-pressed="false">
+        <svg viewBox="0 0 24 24" id="themeIcon"><use href="#ic-moon"/></svg>
+      </button>
+      <a class="btn btn-solid btn-sm" href="tel:+37164625156"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg><span data-i18n="cta_call">Zvanīt</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile" aria-hidden="true">
+  <a class="m-link" style="--i:0" href="#about"><small>01</small><span data-i18n="nav.about">Par mums</span></a>
+  <a class="m-link" style="--i:1" href="#services"><small>02</small><span data-i18n="nav.services">Pakalpojumi</span></a>
+  <a class="m-link" style="--i:2" href="#careers"><small>03</small><span data-i18n="nav.careers">Vakances</span></a>
+  <a class="m-link" style="--i:3" href="#contact"><small>04</small><span data-i18n="nav.contact">Kontakti</span></a>
+  <div class="m-extra" style="--i:4">
+    <div class="lang-switch" role="group" aria-label="Language" style="display:flex;">
+      <button data-lang="lv" aria-pressed="true">LV</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+      <button data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+    <a class="btn btn-solid btn-sm" href="tel:+37164625156"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg><span data-i18n="cta_call">Zvanīt</span></a>
+  </div>
+  <p class="m-contact"><a href="tel:+37164625156">+371 64 625 156</a> &nbsp;|&nbsp; <a href="mailto:bbstruktura@inbox.lv">bbstruktura@inbox.lv</a></p>
+</nav>
+
+<main id="main">
+
+  <section class="hero">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="https://assets.mixkit.co/videos/827/827-thumb-720-0.jpg">
+      <source src="https://assets.mixkit.co/videos/827/827-720.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="kicker" data-i18n="hero_kicker">Ģeodēzija · Topogrāfija · Kadastrs · kopš 1994</span>
+        <h1><span data-i18n="hero_t1">Precīzi mērījumi.</span><br><em data-i18n="hero_t2">Droši rezultāti.</em></h1>
+        <p class="lede" data-i18n="hero_lede">Topogrāfiskie, inženierģeodēziskie, aerofotogrammetriskie un kadastrālās uzmērīšanas darbi, izmantojot modernākās mūsdienu tehnoloģijas.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="#services"><span data-i18n="cta_services">Mūsu pakalpojumi</span><svg viewBox="0 0 24 24"><use href="#ic-arrow"/></svg></a>
+          <a class="btn btn-line" href="tel:+37164625156"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg><span>+371 64 625 156</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hud" aria-hidden="true">
+      <div><b>56°30′ N · 27°20′ E</b><span data-i18n="hud">Rēzekne · Latvija</span></div>
+      <svg viewBox="0 0 24 24"><use href="#ic-target"/></svg>
+    </div>
+    <button class="hero-pause" id="heroPause" aria-label="Pause background video" aria-pressed="false">
+      <svg viewBox="0 0 24 24" id="heroPauseIcon"><use href="#ic-pause"/></svg>
+    </button>
+  </section>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b>1994</b><span data-i18n="st1">uzņēmuma dibināšanas gads</span></div>
+      <div class="stat"><b>30<em>+</em></b><span data-i18n="st2">gadu pieredze nozarē</span></div>
+      <div class="stat"><b>9</b><span data-i18n="st3">pakalpojumu virzieni</span></div>
+      <div class="stat"><b>LV</b><span data-i18n="st4">darbi visā Latvijas teritorijā</span></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="contours" aria-hidden="true"><svg viewBox="0 0 640 640" preserveAspectRatio="xMidYMid slice"><use href="#contours"/></svg></div>
+    <div class="wrap about">
+      <div class="reveal">
+        <span class="kicker" data-i18n="about_kicker">Par mums</span>
+        <h2 class="big-title"><span data-i18n="about_t1">Pieredze kopš</span> <em>1994</em></h2>
+        <p class="about-text" data-i18n="about_p1">SIA "B &amp; B struktūra" nodarbojas ar topogrāfiskajiem, inženierģeodēziskajiem, aerofotogrammetriskajiem, kā arī kadastrālās zemes robežu uzmērīšanas darbiem, izmantojot modernākās mūsdienu tehnoloģijas.</p>
+        <p class="about-text" data-i18n="about_p2">Darbības laikā esam ieguvuši lielu pieredzi un apguvuši jaunākās tehnoloģijas. Mūsu rīcībā ir moderns aprīkojums, kas ļauj pasūtījumus izpildīt ātri un kvalitatīvi, un darbus veic augsti kvalificēti speciālisti ar ilggadīgu profesionālo pieredzi.</p>
+        <p class="about-quote" data-i18n="about_quote">Uz mums varat droši paļauties.</p>
+      </div>
+      <div class="feat-grid reveal">
+        <div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24"><use href="#ic-tripod"/></svg></span><h3 data-i18n="f1_t">Moderns aprīkojums</h3><p data-i18n="f1_d">Ātri un kvalitatīvi mērījumi ar mūsdienīgām iekārtām.</p></div>
+        <div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24"><use href="#ic-drone"/></svg></span><h3 data-i18n="f2_t">Bezpilota lidaparāti</h3><p data-i18n="f2_d">Aerofotografēšana ar digitālo kameru plašām teritorijām.</p></div>
+        <div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24"><use href="#ic-people"/></svg></span><h3 data-i18n="f3_t">Pieredzējuši speciālisti</h3><p data-i18n="f3_d">Augsti kvalificēta komanda ar ilggadīgu pieredzi.</p></div>
+        <div class="feat"><span class="feat-ic"><svg viewBox="0 0 24 24"><use href="#ic-cad"/></svg></span><h3 data-i18n="f4_t">MicroStation un AutoCAD</h3><p data-i18n="f4_d">Plāni un dati jums ērtā digitālā formātā.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="panel">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker" data-i18n="svc_kicker">Pakalpojumi</span>
+        <h2><span data-i18n="svc_t1">No mērījuma līdz</span> <em data-i18n="svc_t2">gatavam plānam</em></h2>
+        <p data-i18n="svc_sub">Izvēlieties pakalpojumu, lai redzētu, ko tas ietver.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-list" role="tablist" id="svcList"></div>
+        <div class="svc-panel" role="tabpanel" id="svcPanel">
+          <div class="svc-inner" id="svcInner"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="contours" aria-hidden="true"><svg viewBox="0 0 640 640" preserveAspectRatio="xMidYMid slice"><use href="#contours"/></svg></div>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker" data-i18n="pr_kicker">Kā mēs strādājam</span>
+        <h2><span data-i18n="pr_t1">Skaidrs process,</span> <em data-i18n="pr_t2">precīzs rezultāts</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="n">01</span><h3 data-i18n="s1_t">Pieteikums</h3><p data-i18n="s1_d">Sazinieties ar mums pa tālruni vai e-pastu un pastāstiet par objektu un uzdevumu.</p></div>
+        <div class="step reveal"><span class="n">02</span><h3 data-i18n="s2_t">Mērījumi objektā</h3><p data-i18n="s2_d">Mūsu speciālisti veic uzmērīšanu ar modernu aprīkojumu un, ja vajag, ar bezpilota lidaparātu.</p></div>
+        <div class="step reveal"><span class="n">03</span><h3 data-i18n="s3_t">Datu apstrāde</h3><p data-i18n="s3_d">Datus apstrādājam un noformējam MicroStation un AutoCAD vidē.</p></div>
+        <div class="step reveal"><span class="n">04</span><h3 data-i18n="s4_t">Gatavs rezultāts</h3><p data-i18n="s4_d">Saņemiet plānus, modeļus vai dokumentāciju, kas gatava tālākai izmantošanai.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="dark-band" id="careers">
+    <svg class="deco" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-target"/></svg>
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker" data-i18n="car_kicker">Vakances</span>
+        <h2><span data-i18n="car_t1">Pievienojies</span> <em data-i18n="car_t2">mūsu komandai</em></h2>
+        <p data-i18n="car_p">Ja vēlaties pievienoties SIA "B &amp; B struktūra" komandai, sūtiet CV un motivācijas vēstuli uz mūsu e-pastu, norādot amatu, uz kuru kandidējat.</p>
+      </div>
+      <div class="btns reveal">
+        <a class="mail" href="mailto:bbstruktura@inbox.lv?subject=CV">bbstruktura@inbox.lv</a>
+        <a class="btn btn-solid" href="mailto:bbstruktura@inbox.lv?subject=CV"><svg viewBox="0 0 24 24"><use href="#ic-mail"/></svg><span data-i18n="car_btn">Sūtīt CV</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="kicker" data-i18n="con_kicker">Kontakti</span>
+        <h2 class="big-title"><span data-i18n="con_t1">Sazinieties</span> <em data-i18n="con_t2">ar mums</em></h2>
+        <div class="info-list">
+          <div class="info-item"><span class="label" data-i18n="lbl_office">Birojs</span><span class="value">Atbrīvošanas aleja 118-2, Rēzekne, LV-4601, <span data-i18n="country">Latvija</span></span></div>
+          <div class="info-item"><span class="label" data-i18n="lbl_tel">Tālrunis</span><span class="value"><a href="tel:+37164625156">+371 64 625 156</a></span></div>
+          <div class="info-item"><span class="label" data-i18n="lbl_mob">Mobilais</span><span class="value"><a href="tel:+37129109902">+371 29 109 902</a></span></div>
+          <div class="info-item"><span class="label" data-i18n="lbl_fax">Fakss</span><span class="value">+371 64 625 156</span></div>
+          <div class="info-item"><span class="label" data-i18n="lbl_mail">E-pasts</span><span class="value"><a href="mailto:bbstruktura@inbox.lv">bbstruktura@inbox.lv</a></span></div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-solid" href="mailto:bbstruktura@inbox.lv"><svg viewBox="0 0 24 24"><use href="#ic-mail"/></svg><span data-i18n="btn_mail">Rakstīt e-pastu</span></a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Atbr%C4%ABvo%C5%A1anas+aleja+118+R%C4%93zekne" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#ic-pin"/></svg><span data-i18n="btn_map">Atvērt kartē</span></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="req">
+          <h3 data-i18n="req_t">Rekvizīti</h3>
+          <dl>
+            <dt data-i18n="req_name">Nosaukums</dt><dd>SIA "B&amp;B struktūra"</dd>
+            <dt data-i18n="req_reg">Reģ. Nr.</dt><dd>42403005357</dd>
+            <dt data-i18n="req_vat">PVN Nr.</dt><dd>LV42403005357</dd>
+            <dt data-i18n="req_addr">Jurid. adrese</dt><dd>Atbrīvošanas aleja 118-2, Rēzekne, LV-4601</dd>
+            <dt data-i18n="req_bank">Banka</dt><dd>AS Swedbank</dd>
+            <dt data-i18n="req_code">Kods</dt><dd>HABALV22</dd>
+            <dt data-i18n="req_acc">Konts</dt><dd>LV45HABA0551011899652</dd>
+          </dl>
+        </div>
+        <div class="call">
+          <small data-i18n="call_k">Zvaniet mums</small>
+          <a href="tel:+37164625156">+371 64 625 156</a>
+          <a href="tel:+37129109902">+371 29 109 902</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-main">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#home" aria-label="B&amp;B struktūra"><img src="logo.svg" alt="B&amp;B struktūra" class="brand-logo" width="163" height="56"></a>
+        <p data-i18n="footer_tag">Ģeodēzija, topogrāfija, aerofotogrammetrija un kadastrālā uzmērīšana kopš 1994. gada.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4 data-i18n="footer_nav">Sadaļas</h4>
+          <a href="#about" data-i18n="nav.about">Par mums</a>
+          <a href="#services" data-i18n="nav.services">Pakalpojumi</a>
+          <a href="#careers" data-i18n="nav.careers">Vakances</a>
+          <a href="#contact" data-i18n="nav.contact">Kontakti</a>
+        </div>
+        <div>
+          <h4 data-i18n="nav.contact">Kontakti</h4>
+          <a href="tel:+37164625156">+371 64 625 156</a>
+          <a href="tel:+37129109902">+371 29 109 902</a>
+          <a href="mailto:bbstruktura@inbox.lv">bbstruktura@inbox.lv</a>
+          <span>Atbrīvošanas aleja 118-2, Rēzekne</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yr">2026</span> SIA "B&amp;B struktūra". <span data-i18n="footer_rights">Visas tiesības aizsargātas.</span></span>
+      <div class="footer-lang" role="group" aria-label="Language">
+        <button data-lang="lv" aria-pressed="true">LV</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+        <button data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ICONS = ['ic-topo','ic-tripod','ic-drone','ic-ortho','ic-cube','ic-volume','ic-plot','ic-split','ic-network'];
+  var SV = {
+    lv:[
+      {t:"Topogrāfiskie darbi", d:"Topogrāfisko plānu izgatavošanu veicam, kombinējot aerofotografēšanu ar tradicionālajām ģeodēziskās uzmērīšanas metodēm. Tas nodrošina ātru un kvalitatīvu plānu izgatavošanu plašām teritorijām: ceļiem, karjeriem, mežiem, dzelzceļam u.c.", i:["Topogrāfiskā uzmērīšana un plānu izgatavošana mērogos 1:250, 1:500, 1:1000 un 1:2000","Divdimensionālā un trīsdimensionālā topogrāfiskā uzmērīšana","Apakšzemes komunikāciju uzmērīšana un saskaņošana","Plānu noformēšana MicroStation un AutoCAD vidē"]},
+      {t:"Ģeodēziskie darbi", d:"Visa veida inženierģeodēziskie darbi būvniecībai un infrastruktūrai.", i:["Būvasu nospraušana","Inženierkomunikāciju nospraušana","Ielu, ceļu un laukumu nospraušana","Ģeodēzisko atbalsta punktu un tīklu ierīkošana un uzmērīšana","Datu bāzu izveidošana","Inženierkomunikāciju un ielu segumu izpilduzmērīšana","Inženiertehnisko būvju deformāciju monitorings","Trīsdimensionālā uzmērīšana","Izpilddokumentācijas izgatavošana","Citi inženierģeodēziskie darbi pēc klienta pieprasījuma"]},
+      {t:"Aerofotografēšana", d:"Aerofotografēšana ar digitālu aerofoto kameru, izmantojot bezpilota lidaparātu. Pakalpojums nepieciešams, ja no digitālajiem datiem plānots izgatavot fotogrammetriskos produktus - ortofoto vai topogrāfisko plānu.", i:["Aerofotografēšana ar bezpilota lidaparātu","Digitālā aerofoto kamera","Dati ortofoto un topogrāfisko plānu izgatavošanai"]},
+      {t:"Ortofoto izgatavošana", d:"Izgatavojam digitālos ortofoto attēlus dažādos mērogos visā Latvijas teritorijā. Pakalpojums nepieciešams jomās, kur vajadzīga ģeotelpiskā informācija:", i:["Meža inventarizācija","Vides monitorings","Hidrotehnisko būvju drošības kontrole","Plūdu prognozēšana","Transporta objektu inženierizpēte","Derīgo izrakteņu ieguves monitorings","Objektu būvniecības projektēšana","Lauksaimniecības lauku platību un kultūru kontrole"]},
+      {t:"Virsmu modeļi 3D", d:"Izgatavojam 3D virsmas un reljefa modeļus - uz aerofotogrammetriskas bāzes sagatavotus produktus, kas digitālā veidā sniedz informāciju par zemes virsmas reljefu un visiem uz tās esošajiem objektiem.", i:["3D virsmas modeļi","Reljefa modeļi","Dati ģeogrāfiskās informācijas apkopošanai, attēlošanai un prognozēšanai"]},
+      {t:"Tilpumu aprēķini", d:"Precīzi tilpumu aprēķini materiāliem un karjeriem.", i:["Materiālu tilpumu aprēķini","Karjeru izstrādes tilpuma aprēķināšana"]},
+      {t:"Kadastrālā uzmērīšana", d:"Zemes robežu uzmērīšana un plāni kadastram un zemesgrāmatai.", i:["Robežu instrumentālā uzmērīšana un zemes robežu plānu izgatavošana","Apgrūtinājumu un situācijas plānu izgatavošana","Nomas robežplānu izgatavošana","Zemes gabalu robežu noteikšana dabā","Robežu atjaunošana","Plānu izgatavošana būvju reģistrācijai zemesgrāmatā","Zemes transformācijas plānu izgatavošana un platību uzmērīšana"]},
+      {t:"Zemes ierīcība", d:"Zemes ierīcības projektu izstrādā, kad tiek veikta zemes gabalu sadalīšana, starpgabalu likvidēšana, zemes apvienošana (konsolidācija), robežu pārkārtošana vai piekļūšanas nodrošināšana zemes gabalam.", i:["Zemes ierīcības projektu izstrāde","Zemes ierīcības projektu saskaņošana"]},
+      {t:"Ģeodēzisko tīklu apsekošana", d:"Vietējo ģeodēzisko tīklu apsekošana.", i:["Ģeodēzisko punktu apsekošana","Punktu izvērtēšana","Apsekošanas pārskata sagatavošana"]}
+    ],
+    en:[
+      {t:"Topographic surveys", d:"We produce topographic plans by combining aerial photography with traditional surveying methods. This gives fast, high-quality plans for large areas: roads, quarries, forests, railways and more.", i:["Topographic surveys and plans at 1:250, 1:500, 1:1000 and 1:2000","2D and 3D topographic surveys","Underground utility surveys and approval","Plan drafting in MicroStation and AutoCAD"]},
+      {t:"Geodetic work", d:"All types of engineering surveys for construction and infrastructure.", i:["Building axis setting-out","Utility setting-out","Street, road and site setting-out","Geodetic control points and networks","Database creation","As-built surveys of utilities and road surfaces","Deformation monitoring of engineering structures","3D surveys","As-built documentation","Other engineering surveys on request"]},
+      {t:"Aerial photography", d:"Aerial photography with a digital camera on an unmanned aircraft (drone). Needed when photogrammetric products, such as orthophotos or topographic plans, will be made from the digital data.", i:["Drone aerial photography","Digital aerial camera","Data for orthophotos and topographic plans"]},
+      {t:"Orthophotos", d:"We produce digital orthophoto images at various scales across all of Latvia. Used wherever geospatial information is needed:", i:["Forest inventory","Environmental monitoring","Safety control of hydraulic structures","Flood forecasting","Engineering studies of transport sites","Mineral extraction monitoring","Construction design","Agricultural field and crop control"]},
+      {t:"3D surface models", d:"We build 3D surface and terrain models from aerial photogrammetry, giving digital information about the terrain and every object on it.", i:["3D surface models","Terrain models","Data for GIS collection, mapping and forecasting"]},
+      {t:"Volume calculations", d:"Accurate volume calculations for materials and quarries.", i:["Material volume calculations","Quarry excavation volume calculations"]},
+      {t:"Cadastral surveys", d:"Land boundary surveys and plans for the cadastre and the land register.", i:["Instrumental boundary surveys and land boundary plans","Encumbrance and site plans","Lease boundary plans","Staking out plot boundaries on site","Boundary restoration","Plans for registering buildings in the land register","Land transformation plans and area surveys"]},
+      {t:"Land management", d:"A land management project is needed when dividing plots, removing gaps between plots, consolidating land, rearranging boundaries or providing access to a plot.", i:["Land management project development","Land management project approval"]},
+      {t:"Geodetic network inspection", d:"Inspection of local geodetic networks.", i:["Inspection of geodetic points","Condition assessment","Inspection report preparation"]}
+    ],
+    ru:[
+      {t:"Топографические работы", d:"Топографические планы мы создаём, сочетая аэрофотосъёмку с традиционными методами геодезической съёмки. Это обеспечивает быстрое и качественное изготовление планов для больших территорий: дорог, карьеров, лесов, железных дорог и др.", i:["Топографическая съёмка и планы в масштабах 1:250, 1:500, 1:1000 и 1:2000","Двухмерная и трёхмерная топографическая съёмка","Съёмка и согласование подземных коммуникаций","Оформление планов в MicroStation и AutoCAD"]},
+      {t:"Геодезические работы", d:"Все виды инженерно-геодезических работ для строительства и инфраструктуры.", i:["Вынос осей зданий","Вынос инженерных коммуникаций","Вынос улиц, дорог и площадок","Создание и съёмка опорных геодезических пунктов и сетей","Создание баз данных","Исполнительная съёмка коммуникаций и дорожных покрытий","Мониторинг деформаций инженерных сооружений","Трёхмерная съёмка","Изготовление исполнительной документации","Другие инженерно-геодезические работы по запросу клиента"]},
+      {t:"Аэрофотосъёмка", d:"Аэрофотосъёмка цифровой камерой с беспилотного летательного аппарата. Услуга нужна, если по цифровым данным планируется изготовить фотограмметрические продукты - ортофото или топографический план.", i:["Аэрофотосъёмка с беспилотника","Цифровая аэрофотокамера","Данные для ортофото и топографических планов"]},
+      {t:"Изготовление ортофото", d:"Изготавливаем цифровые ортофотоснимки в разных масштабах по всей территории Латвии. Услуга нужна там, где требуется геопространственная информация:", i:["Инвентаризация леса","Мониторинг окружающей среды","Контроль безопасности гидротехнических сооружений","Прогнозирование паводков","Инженерные изыскания транспортных объектов","Мониторинг добычи полезных ископаемых","Проектирование строительства объектов","Контроль сельскохозяйственных площадей и культур"]},
+      {t:"3D-модели поверхности", d:"Изготавливаем 3D-модели поверхности и рельефа на основе аэрофотограмметрии. В цифровом виде они дают информацию о рельефе земли и всех объектах на ней.", i:["3D-модели поверхности","Модели рельефа","Данные для сбора, отображения и прогнозирования геоинформации"]},
+      {t:"Расчёт объёмов", d:"Точный расчёт объёмов материалов и карьеров.", i:["Расчёт объёмов материалов","Расчёт объёмов разработки карьеров"]},
+      {t:"Кадастровые обмеры", d:"Обмер границ земли и планы для кадастра и земельной книги.", i:["Инструментальный обмер границ и планы границ земли","Планы обременений и ситуационные планы","Планы границ аренды","Определение границ участков на местности","Восстановление границ","Планы для регистрации строений в земельной книге","Планы трансформации земли и обмер площадей"]},
+      {t:"Землеустройство", d:"Проект землеустройства разрабатывается при разделе участков, ликвидации промежуточных участков, объединении земель (консолидации), переустройстве границ или обеспечении доступа к участку.", i:["Разработка проектов землеустройства","Согласование проектов землеустройства"]},
+      {t:"Обследование геодезических сетей", d:"Обследование местных геодезических сетей.", i:["Обследование геодезических пунктов","Оценка их состояния","Подготовка отчёта об обследовании"]}
+    ]
+  };
+
+  var T = {
+    lv: {
+      skip:"Pāriet uz saturu",
+      "nav.about":"Par mums","nav.services":"Pakalpojumi","nav.careers":"Vakances","nav.contact":"Kontakti",
+      cta_call:"Zvanīt", cta_services:"Mūsu pakalpojumi",
+      theme_dark:"Tumšais režīms", theme_light:"Gaišais režīms", menu_open:"Atvērt izvēlni", menu_close:"Aizvērt izvēlni",
+      video_pause:"Apturēt fona video", video_play:"Atskaņot fona video",
+      hero_kicker:"Ģeodēzija · Topogrāfija · Kadastrs · kopš 1994", hero_t1:"Precīzi mērījumi.", hero_t2:"Droši rezultāti.",
+      hero_lede:"Topogrāfiskie, inženierģeodēziskie, aerofotogrammetriskie un kadastrālās uzmērīšanas darbi, izmantojot modernākās mūsdienu tehnoloģijas.",
+      hud:"Rēzekne · Latvija",
+      st1:"uzņēmuma dibināšanas gads", st2:"gadu pieredze nozarē", st3:"pakalpojumu virzieni", st4:"darbi visā Latvijas teritorijā",
+      about_kicker:"Par mums", about_t1:"Pieredze kopš",
+      about_p1:"SIA \"B & B struktūra\" nodarbojas ar topogrāfiskajiem, inženierģeodēziskajiem, aerofotogrammetriskajiem, kā arī kadastrālās zemes robežu uzmērīšanas darbiem, izmantojot modernākās mūsdienu tehnoloģijas.",
+      about_p2:"Darbības laikā esam ieguvuši lielu pieredzi un apguvuši jaunākās tehnoloģijas. Mūsu rīcībā ir moderns aprīkojums, kas ļauj pasūtījumus izpildīt ātri un kvalitatīvi, un darbus veic augsti kvalificēti speciālisti ar ilggadīgu profesionālo pieredzi.",
+      about_quote:"Uz mums varat droši paļauties.",
+      f1_t:"Moderns aprīkojums", f1_d:"Ātri un kvalitatīvi mērījumi ar mūsdienīgām iekārtām.",
+      f2_t:"Bezpilota lidaparāti", f2_d:"Aerofotografēšana ar digitālo kameru plašām teritorijām.",
+      f3_t:"Pieredzējuši speciālisti", f3_d:"Augsti kvalificēta komanda ar ilggadīgu pieredzi.",
+      f4_t:"MicroStation un AutoCAD", f4_d:"Plāni un dati jums ērtā digitālā formātā.",
+      svc_kicker:"Pakalpojumi", svc_t1:"No mērījuma līdz", svc_t2:"gatavam plānam", svc_sub:"Izvēlieties pakalpojumu, lai redzētu, ko tas ietver.",
+      svc_of:"Pakalpojums",
+      pr_kicker:"Kā mēs strādājam", pr_t1:"Skaidrs process,", pr_t2:"precīzs rezultāts",
+      s1_t:"Pieteikums", s1_d:"Sazinieties ar mums pa tālruni vai e-pastu un pastāstiet par objektu un uzdevumu.",
+      s2_t:"Mērījumi objektā", s2_d:"Mūsu speciālisti veic uzmērīšanu ar modernu aprīkojumu un, ja vajag, ar bezpilota lidaparātu.",
+      s3_t:"Datu apstrāde", s3_d:"Datus apstrādājam un noformējam MicroStation un AutoCAD vidē.",
+      s4_t:"Gatavs rezultāts", s4_d:"Saņemiet plānus, modeļus vai dokumentāciju, kas gatava tālākai izmantošanai.",
+      car_kicker:"Vakances", car_t1:"Pievienojies", car_t2:"mūsu komandai",
+      car_p:"Ja vēlaties pievienoties SIA \"B & B struktūra\" komandai, sūtiet CV un motivācijas vēstuli uz mūsu e-pastu, norādot amatu, uz kuru kandidējat.",
+      car_btn:"Sūtīt CV",
+      con_kicker:"Kontakti", con_t1:"Sazinieties", con_t2:"ar mums",
+      lbl_office:"Birojs", lbl_tel:"Tālrunis", lbl_mob:"Mobilais", lbl_fax:"Fakss", lbl_mail:"E-pasts", country:"Latvija",
+      btn_mail:"Rakstīt e-pastu", btn_map:"Atvērt kartē",
+      req_t:"Rekvizīti", req_name:"Nosaukums", req_reg:"Reģ. Nr.", req_vat:"PVN Nr.", req_addr:"Jurid. adrese", req_bank:"Banka", req_code:"Kods", req_acc:"Konts",
+      call_k:"Zvaniet mums",
+      footer_tag:"Ģeodēzija, topogrāfija, aerofotogrammetrija un kadastrālā uzmērīšana kopš 1994. gada.", footer_nav:"Sadaļas", footer_rights:"Visas tiesības aizsargātas.",
+      page_title:"B&B struktūra - ģeodēzija, topogrāfija un kadastrālā uzmērīšana, Rēzekne"
+    },
+    en: {
+      skip:"Skip to content",
+      "nav.about":"About","nav.services":"Services","nav.careers":"Careers","nav.contact":"Contact",
+      cta_call:"Call", cta_services:"Our services",
+      theme_dark:"Dark mode", theme_light:"Light mode", menu_open:"Open menu", menu_close:"Close menu",
+      video_pause:"Pause background video", video_play:"Play background video",
+      hero_kicker:"Geodesy · Topography · Cadastre · since 1994", hero_t1:"Precise measurements.", hero_t2:"Reliable results.",
+      hero_lede:"Topographic, engineering, aerial photogrammetry and cadastral boundary surveys, using the latest modern technology.",
+      hud:"Rēzekne · Latvia",
+      st1:"year the company was founded", st2:"years of experience", st3:"service areas", st4:"projects across all of Latvia",
+      about_kicker:"About us", about_t1:"Experience since",
+      about_p1:"SIA \"B & B struktūra\" carries out topographic, engineering geodetic, aerial photogrammetry and cadastral land boundary surveys using the latest modern technology.",
+      about_p2:"Over the years we have built deep experience and mastered new technology. Our modern equipment lets us complete orders quickly and to a high standard, and the work is done by highly qualified specialists with many years of professional experience.",
+      about_quote:"You can rely on us.",
+      f1_t:"Modern equipment", f1_d:"Fast, high-quality measurements with up-to-date instruments.",
+      f2_t:"Drones", f2_d:"Aerial photography with a digital camera for large areas.",
+      f3_t:"Experienced specialists", f3_d:"A highly qualified team with many years of experience.",
+      f4_t:"MicroStation and AutoCAD", f4_d:"Plans and data in a convenient digital format.",
+      svc_kicker:"Services", svc_t1:"From measurement to", svc_t2:"finished plan", svc_sub:"Choose a service to see what it includes.",
+      svc_of:"Service",
+      pr_kicker:"How we work", pr_t1:"A clear process,", pr_t2:"a precise result",
+      s1_t:"Enquiry", s1_d:"Call or email us and tell us about the site and the task.",
+      s2_t:"Survey on site", s2_d:"Our specialists survey with modern equipment and, when needed, a drone.",
+      s3_t:"Data processing", s3_d:"We process the data and draft it in MicroStation and AutoCAD.",
+      s4_t:"Finished result", s4_d:"Receive plans, models or documentation ready for further use.",
+      car_kicker:"Careers", car_t1:"Join", car_t2:"our team",
+      car_p:"If you would like to join the SIA \"B & B struktūra\" team, send your CV and a cover letter to our email, stating the position you are applying for.",
+      car_btn:"Send CV",
+      con_kicker:"Contact", con_t1:"Get in", con_t2:"touch",
+      lbl_office:"Office", lbl_tel:"Phone", lbl_mob:"Mobile", lbl_fax:"Fax", lbl_mail:"Email", country:"Latvia",
+      btn_mail:"Send an email", btn_map:"Open in Maps",
+      req_t:"Company details", req_name:"Name", req_reg:"Reg. No.", req_vat:"VAT No.", req_addr:"Legal address", req_bank:"Bank", req_code:"SWIFT", req_acc:"Account",
+      call_k:"Call us",
+      footer_tag:"Geodesy, topography, aerial photogrammetry and cadastral surveys since 1994.", footer_nav:"Sections", footer_rights:"All rights reserved.",
+      page_title:"B&B struktūra - geodesy, topography and cadastral surveys, Rēzekne"
+    },
+    ru: {
+      skip:"К содержанию",
+      "nav.about":"О нас","nav.services":"Услуги","nav.careers":"Вакансии","nav.contact":"Контакты",
+      cta_call:"Позвонить", cta_services:"Наши услуги",
+      theme_dark:"Тёмная тема", theme_light:"Светлая тема", menu_open:"Открыть меню", menu_close:"Закрыть меню",
+      video_pause:"Остановить фоновое видео", video_play:"Воспроизвести фоновое видео",
+      hero_kicker:"Геодезия · Топография · Кадастр · с 1994", hero_t1:"Точные измерения.", hero_t2:"Надёжный результат.",
+      hero_lede:"Топографические, инженерно-геодезические, аэрофотограмметрические и кадастровые работы по обмеру границ с использованием современных технологий.",
+      hud:"Резекне · Латвия",
+      st1:"год основания компании", st2:"лет опыта в отрасли", st3:"направлений услуг", st4:"работы по всей Латвии",
+      about_kicker:"О нас", about_t1:"Опыт с",
+      about_p1:"SIA \"B & B struktūra\" выполняет топографические, инженерно-геодезические, аэрофотограмметрические, а также кадастровые работы по обмеру границ земли с использованием самых современных технологий.",
+      about_p2:"За годы работы мы накопили большой опыт и освоили новейшие технологии. Современное оборудование позволяет выполнять заказы быстро и качественно, а работы проводят высококвалифицированные специалисты с многолетним опытом.",
+      about_quote:"На нас можно смело положиться.",
+      f1_t:"Современное оборудование", f1_d:"Быстрые и качественные измерения на современных приборах.",
+      f2_t:"Беспилотники", f2_d:"Аэрофотосъёмка цифровой камерой для больших территорий.",
+      f3_t:"Опытные специалисты", f3_d:"Высококвалифицированная команда с многолетним опытом.",
+      f4_t:"MicroStation и AutoCAD", f4_d:"Планы и данные в удобном цифровом формате.",
+      svc_kicker:"Услуги", svc_t1:"От измерения до", svc_t2:"готового плана", svc_sub:"Выберите услугу, чтобы увидеть, что в неё входит.",
+      svc_of:"Услуга",
+      pr_kicker:"Как мы работаем", pr_t1:"Понятный процесс,", pr_t2:"точный результат",
+      s1_t:"Заявка", s1_d:"Позвоните или напишите нам и расскажите об объекте и задаче.",
+      s2_t:"Измерения на объекте", s2_d:"Наши специалисты проводят съёмку современным оборудованием и при необходимости беспилотником.",
+      s3_t:"Обработка данных", s3_d:"Обрабатываем данные и оформляем их в MicroStation и AutoCAD.",
+      s4_t:"Готовый результат", s4_d:"Получите планы, модели или документацию, готовые к дальнейшему использованию.",
+      car_kicker:"Вакансии", car_t1:"Присоединяйтесь", car_t2:"к нашей команде",
+      car_p:"Если вы хотите работать в команде SIA \"B & B struktūra\", отправьте резюме и мотивационное письмо на наш e-mail, указав должность, на которую претендуете.",
+      car_btn:"Отправить резюме",
+      con_kicker:"Контакты", con_t1:"Свяжитесь", con_t2:"с нами",
+      lbl_office:"Офис", lbl_tel:"Телефон", lbl_mob:"Мобильный", lbl_fax:"Факс", lbl_mail:"E-mail", country:"Латвия",
+      btn_mail:"Написать письмо", btn_map:"Открыть на карте",
+      req_t:"Реквизиты", req_name:"Название", req_reg:"Рег. №", req_vat:"НДС №", req_addr:"Юрид. адрес", req_bank:"Банк", req_code:"Код", req_acc:"Счёт",
+      call_k:"Позвоните нам",
+      footer_tag:"Геодезия, топография, аэрофотограмметрия и кадастровые обмеры с 1994 года.", footer_nav:"Разделы", footer_rights:"Все права защищены.",
+      page_title:"B&B struktūra - геодезия, топография и кадастровые обмеры, Резекне"
+    }
+  };
+
+  var htmlEl = document.documentElement;
+  var currentLang = 'lv';
+  var active = 0;
+  var pageTitleEl = document.getElementById('pageTitle');
+  var list = document.getElementById('svcList');
+  var inner = document.getElementById('svcInner');
+  var svcTimer = null;
+
+  function getTheme(){ return htmlEl.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
+  function pad(n){ return (n < 9 ? '0' : '') + (n + 1); }
+  function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  function fillPanel(){
+    var s = SV[currentLang][active];
+    inner.innerHTML =
+      '<div class="svc-top"><span class="svc-ic"><svg viewBox="0 0 24 24"><use href="#' + ICONS[active] + '"></use></svg></span>' +
+      '<div><small>' + esc(T[currentLang].svc_of) + ' ' + pad(active) + ' / ' + pad(SV[currentLang].length - 1) + '</small><h3>' + esc(s.t) + '</h3></div></div>' +
+      '<p class="svc-desc">' + esc(s.d) + '</p>' +
+      '<ul class="svc-items">' + s.i.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+    var wm = document.getElementById('svcWm');
+    if(!wm){ wm = document.createElement('span'); wm.className = 'wm'; wm.id = 'svcWm'; wm.setAttribute('aria-hidden','true'); document.getElementById('svcPanel').appendChild(wm); }
+    wm.textContent = pad(active);
+  }
+  function renderList(){
+    list.innerHTML = '';
+    SV[currentLang].forEach(function(s, i){
+      var b = document.createElement('button');
+      b.className = 'svc-tab'; b.type = 'button';
+      b.setAttribute('role','tab');
+      b.setAttribute('aria-selected', i === active ? 'true' : 'false');
+      b.innerHTML = '<span class="n">' + pad(i) + '</span><span>' + esc(s.t) + '</span><span class="ar"><svg viewBox="0 0 24 24"><use href="#ic-arrow"></use></svg></span>';
+      b.addEventListener('click', function(){ select(i); });
+      list.appendChild(b);
+    });
+    fillPanel();
+  }
+  function select(i){
+    if(i === active) return;
+    active = i;
+    [].forEach.call(list.children, function(b, k){ b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+    inner.classList.add('fading');
+    clearTimeout(svcTimer);
+    svcTimer = setTimeout(function(){ fillPanel(); inner.classList.remove('fading'); }, 230);
+    if(window.innerWidth < 1024){
+      var p = document.getElementById('svcPanel');
+      var top = p.getBoundingClientRect().top + window.scrollY - 84;
+      window.scrollTo({top: top, behavior: 'smooth'});
+    }
+  }
+
+  function refreshLabels(){
+    var d = T[currentLang];
+    var theme = getTheme();
+    var tt = document.getElementById('themeToggle');
+    tt.setAttribute('aria-label', theme === 'dark' ? d.theme_light : d.theme_dark);
+    tt.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    document.getElementById('themeIcon').innerHTML = '<use href="' + (theme === 'dark' ? '#ic-sun' : '#ic-moon') + '"></use>';
+    var mt = document.getElementById('menuToggle');
+    mt.setAttribute('aria-label', mt.getAttribute('aria-expanded') === 'true' ? d.menu_close : d.menu_open);
+    var vid = document.getElementById('heroVideo');
+    document.getElementById('heroPause').setAttribute('aria-label', vid.paused ? d.video_play : d.video_pause);
+  }
+
+  function applyLang(lang){
+    if(!T[lang]) lang = 'lv';
+    currentLang = lang;
+    var d = T[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(d[k] !== undefined) el.textContent = d[k];
+    });
+    document.querySelectorAll('[data-lang]').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+    htmlEl.setAttribute('lang', lang);
+    if(pageTitleEl) pageTitleEl.textContent = d.page_title;
+    renderList();
+    try{ localStorage.setItem('bb-lang', lang); }catch(e){}
+    refreshLabels();
+  }
+
+  document.querySelectorAll('[data-lang]').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
+  });
+
+  document.getElementById('themeToggle').addEventListener('click', function(){
+    var next = getTheme() === 'dark' ? 'light' : 'dark';
+    htmlEl.setAttribute('data-theme', next);
+    try{ localStorage.setItem('bb-theme', next); }catch(e){}
+    refreshLabels();
+  });
+
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  function setMenu(open){
+    mobileNav.classList.toggle('open', open);
+    mobileNav.setAttribute('aria-hidden', open ? 'false' : 'true');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+    refreshLabels();
+  }
+  menuToggle.addEventListener('click', function(){ setMenu(!mobileNav.classList.contains('open')); });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && mobileNav.classList.contains('open')) setMenu(false); });
+  window.addEventListener('resize', function(){ if(window.innerWidth >= 1024 && mobileNav.classList.contains('open')) setMenu(false); });
+
+  var vid = document.getElementById('heroVideo');
+  var pauseBtn = document.getElementById('heroPause');
+  var pauseIcon = document.getElementById('heroPauseIcon');
+  function setPauseIcon(){ pauseIcon.innerHTML = '<use href="' + (vid.paused ? '#ic-play' : '#ic-pause') + '"></use>'; pauseBtn.setAttribute('aria-pressed', vid.paused ? 'true' : 'false'); refreshLabels(); }
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ try{ vid.pause(); }catch(e){} }
+  pauseBtn.addEventListener('click', function(){
+    if(vid.paused){ var p = vid.play(); if(p && p.catch) p.catch(function(){}); } else { vid.pause(); }
+    setPauseIcon();
+  });
+  vid.addEventListener('play', setPauseIcon);
+  vid.addEventListener('pause', setPauseIcon);
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var saved = 'lv';
+  try{ saved = localStorage.getItem('bb-lang') || 'lv'; }catch(e){}
+  applyLang(saved);
+  setPauseIcon();
+})();
+</script>
+
+</body>
+</html>
